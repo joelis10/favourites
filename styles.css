@@ -64,7 +64,7 @@ a {
 }
 
 .remove {
-    position: fixed;
+    position: absolute;
     background-color: red;
     border-radius: 5px;
     margin-left: 330px;
@@ -82,7 +82,7 @@ a {
 }
 
 .wikipedia {
-    position: fixed;
+    position: absolute;
     background-color: white;
     border-radius: 5px;
     margin-left: 260px;
