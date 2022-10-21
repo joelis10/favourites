@@ -4,49 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <title>Favourites</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap" rel="stylesheet">
+    <title>Document</title>
 </head>
-<body class="body">
-    <div class="container">
-        <h2 class="title">Favourite Movie Franchise</h2>
-        <ul>
-            <li class="franchise">The Matrix<button class="wikipedia" onClick="window.open('https://en.wikipedia.org/wiki/The_Matrix');">Wiki</button><button class="remove">&times;</button></li>
-            <li class="franchise">Star Wars<button class="wikipedia" onClick="window.open('https://en.wikipedia.org/wiki/Star_Wars');">Wiki</button><button class="remove">&times;</button></li>
-            <li class="franchise">Harry Potter<button class="wikipedia" onClick="window.open('https://en.wikipedia.org/wiki/Harry_Potter');">Wiki</button><button class="remove">&times;</button></li>
-            <li class="franchise">Lord of the Rings<button class="wikipedia" onClick="window.open('https://en.wikipedia.org/wiki/The_Lord_of_the_Rings');">Wiki</button><button class="remove">&times;</button></li>
-            <li class="franchise">Marvel Cinematic Universe<button class="wikipedia" onClick="window.open('https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe');">Wiki</button><button class="remove">&times;</button></li>
-        </ul>
-        <button class="newType">Add a new movie franchise</button>
-    </div>
-    <div class="container">
-        <h2 class="title">Favourite Sports</h2>
-        <ul>
-            <li class="franchise">Football<button class="wikipedia" onClick="window.open('https://en.wikipedia.org/wiki/Football');">Wiki</button><button class="remove">&times;</button></li>
-            <li class="franchise">Rugby<button class="wikipedia" onClick="window.open('https://en.wikipedia.org/wiki/Rugby');">Wiki</button><button class="remove">&times;</button></li>
-            <li class="franchise">American Football<button class="wikipedia" onClick="window.open('https://en.wikipedia.org/wiki/American Football');">Wiki</button><button class="remove">&times;</button></li>
-            <li class="franchise">Handball<button class="wikipedia" onClick="window.open('https://en.wikipedia.org/wiki/Handball');">Wiki</button><button class="remove">&times;</button></li>
-            <li class="franchise">Netball<button class="wikipedia" onClick="window.open('https://en.wikipedia.org/wiki/Netball');">Wiki</button><button class="remove">&times;</button></li>
-        </ul>
-        <button class="newType">Add a new sport</button>
-    </div>
-    <div class="container">
-        <h2 class="title">Customisation Panel</h2>
-        <ul>
-            <li class="franchise bgChange">Change the container background</li>
-            <li class="franchise borderChange">Change container border colour</li>
-            <li class="franchise bodyChange">Change body background</li>
-            <li class="franchise buttonChange">Change button colour</li>
-            <li class="franchise buttonBorder">Change button border</li>
-            <li class="franchise titleColor">Change title colour</li>
-            <li class="franchise addShadow">Toggle container shadow</li>
-        </ul>
-    </div>
-    <button class="nextProject" onclick="window.open('quote generator/quotes.html')">Quote Generator >></button>
+<body>
+    <h1>My Projects</h1>
+    <button class="project" onclick="window.open('/favourites')">Favourites</button>
+    <button class="project" onclick="window.open('/quote generator')">Quote Generator</button>
+    <button class="project" onclick="window.open('/modal project')">Animated Modal</button>
+    <button class="toggleAnim"><span class="off">Turn Animation Off</span><span class="on">Turn Animation On</span></button>
 </body>
-</html>
-
-<script src="jstesting.js"></script>
+</html> 
