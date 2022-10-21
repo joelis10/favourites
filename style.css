@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Fuzzy Bubbles';
+}
+
+.project {
+    width: 60%;
+    height: 50px;
+    margin: 10px auto;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.project:hover {
+    animation-name: buttonAnimate;
+    animation-duration: .8s;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px black;
+}
+
+@keyframes buttonAnimate {
+    0% {
+        bottom: 0px;
+        opacity: 0;
+        background-color: white;
+        box-shadow: 0 0 0;
+    }
+
+    10% {
+        opacity: 1;
+        background-color: blue;
+    }
+
+    20% {
+        opacity: 1;
+        background-color: purple;
+    }
+
+    30% {
+        opacity: 1;
+        background-color: yellow;
+    }
+
+    40% {
+        opacity: 1;
+        background-color: green;
+    }
+
+    50% {
+        opacity: 1;
+        background-color: red;
+        box-shadow: 10px 10px 10px black;
+    }
+
+    60% {
+        opacity: 1;
+        background-color: orange;
+        box-shadow: 10px 10px 10px black;
+    }
+    70% {
+        opacity: 1;
+        background-color: teal;
+        box-shadow: 10px 10px 10px black;
+    }
+
+    80% {
+        opacity: 1;
+        background-color: lawngreen;
+        box-shadow: 10px 10px 10px black;
+    }
+
+    90% {
+        opacity: 1;
+        background-color: orchid;
+        box-shadow: 10px 10px 10px black;
+    }
+
+    100% {
+        opacity: 1;
+        background-color: black;
+        box-shadow: 10px 10px 10px black;
+    }
+}
+
+.on {
+    display: none;
+}
