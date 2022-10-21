@@ -1,6 +1,7 @@
 const btn = document.querySelector('#new-quote')
 const quote = document.querySelector('.quote')
 const person = document.querySelector('.person')
+const background = document.querySelector('.background-image')
 
 const quotes = [{
     quote: 'Wisely, and slow. They stumble that run fast.',
@@ -28,10 +29,24 @@ const quotes = [{
     person: '- Wiki'
 }, ];
 
+const images = [{
+    image: 'url(bgImages/library1.jpg)'
+}, {
+    image: 'url(bgImages/library2.jpg)'
+}, {
+    image: 'url(bgImages/library3.jpg)'
+}, {
+    image: 'url(bgImages/library4.jpg)'
+}, {
+    image: 'url(bgImages/library5.jpg)'
+}, ];
+
 btn.addEventListener('click', function(){
 
     let random = Math.floor(Math.random() * quotes.length);
     quote.innerText = quotes[random].quote
     person.innerText = quotes[random].person
 
+    let randomImage = Math.floor(Math.random() * images.length);
+    background.style.background = images[random].image + 'no-repeat center center/ cover';
 });
