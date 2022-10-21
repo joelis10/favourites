@@ -102,3 +102,8 @@ body {
 .quote {
     font-style: italic;
 }
+
+.version {
+    font-size: 8px;
+    font-family: 'Courier New', Courier, monospace;
+}
