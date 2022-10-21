@@ -1,0 +1,99 @@
+body {
+    background: linear-gradient(
+        black,
+        lightblue
+    );
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    font-family: sans-serif;
+    flex-direction: column;
+}
+
+.container {
+    width: 450px;
+    height: 328px;
+    border: 2px solid white;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+
+.container:last-of-type {
+    height: 370px;
+    border: 2px solid blueviolet;
+    color: purple;
+    background-color: aqua;
+}
+
+.franchise {
+    list-style: none;
+    font-size: 16px;
+    width: 90%;
+    height: 35px;
+    background-color: white;
+    margin-bottom: 5px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+li {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.newType {
+    margin-top: 3px;
+    background-color:  white;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.franchise:hover, .newType:hover{
+    color: white;
+    background-color: grey;
+    cursor: pointer;
+}
+
+.remove {
+    position: fixed;
+    background-color: red;
+    border-radius: 5px;
+    margin-left: 330px;
+    color: white;
+    font-weight: bold;
+}
+
+.remove:hover {
+    cursor: pointer;
+    background-color: darkred;
+}
+
+.shadow {
+    box-shadow: 10px 10px 20px black;
+}
+
+.wikipedia {
+    position: fixed;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 260px;
+    font-family: 'Playfair';
+}
+
+.wikipedia:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
