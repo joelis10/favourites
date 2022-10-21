@@ -98,3 +98,7 @@ body {
     cursor: pointer;
     background-color: whitesmoke;
 }
+
+.quote {
+    font-style: italic;
+}

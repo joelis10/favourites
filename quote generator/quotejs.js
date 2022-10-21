@@ -4,25 +4,28 @@ const person = document.querySelector('.person')
 
 const quotes = [{
     quote: 'Wisely, and slow. They stumble that run fast.',
-    person: 'William Shakespeare'
+    person: '- William Shakespeare'
 }, {
     quote: 'If you judge people, you have no time to love them.',
-    person: 'Mother Teresa'
+    person: '- Mother Teresa'
 }, {
     quote: 'Whenever you find yourself on the side of the majority, it is time to pause and reflect.',
-    person: 'Mark Twain'
+    person: '- Mark Twain'
 }, {
     quote: 'All that we are is the result of what we have thought.',
-    person: 'Buddha'
+    person: '- Buddha'
 }, {
     quote: 'The most courageous act is still to think for yourself. Aloud.',
-    person: 'Coco Chanel'
+    person: '- Coco Chanel'
 }, {
     quote: 'Stay hungry, stay foolish.',
-    person: 'Steve Jobs'
+    person: '- Steve Jobs'
 }, {
     quote: 'I have no special talent. I am only passionately curious.',
-    person: 'Albert Einstein'
+    person: '- Albert Einstein'
+}, {
+    quote: 'My life is a fart but my ass needs to poop.',
+    person: '- Wiki'
 }, ];
 
 btn.addEventListener('click', function(){
