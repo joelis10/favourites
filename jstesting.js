@@ -50,7 +50,7 @@ function addNew(event) {
     li.append(remove)
     li.setAttribute('class', 'franchise');
     remove.setAttribute('class', 'remove');
-    remove.innerText = "x";
+    remove.innerHTML = '&times;';
 
     document.querySelectorAll('.remove').forEach(item => item.addEventListener('click', removeSelected))
 }
