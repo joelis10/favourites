@@ -1,0 +1,93 @@
+/* Give the overall document a font family and CSS flex */
+body {
+    font-family: 'Quicksand';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* theming the Divs */
+  .themeable {
+    text-align: center;
+    width: 300px;
+    margin: 15px 0;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .themeable:nth-of-type(1) {
+    border: 2px solid darkgray;
+  }
+  
+  .themeable:nth-of-type(2) {
+    border: 2px solid lightblue;
+  }
+  
+  .themeable:nth-of-type(3) {
+    border: 2px solid lightsalmon;
+  }
+  
+  .themeable:nth-of-type(4) {
+    border: 2px solid yellowgreen;
+  }
+  
+  /* Apply necessary theming to Div contents */
+  .title {
+    font-size: 16px;
+    margin: 5px 0;
+      font-weight: normal;
+  }
+  
+  .contents {
+      font-size: 13px;
+  }
+  
+  .contents:last-of-type {
+    margin: 5px 0;
+  }
+  
+  button {
+    font-family: 'Quicksand';
+    margin: 5px 0;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  /* Toggled classes */
+  
+  /* Title bolding toggles */
+  .on {
+      display: none;
+  }
+  
+  .bolded .on {
+      display: block;
+  }
+  
+  .bolded .off {
+      display: none;
+  }
+  
+  .bolded .title {
+      font-weight: bold;
+  }
+  
+  /* Text toggles */
+  .textOff {
+      display: none;
+  }
+  
+  .textHide .textOff {
+      display: block;
+  }
+  
+  .textHide .textOn {
+      display: none;
+  }
+  
+  .textHide .contents {
+      display: none;
+  }
