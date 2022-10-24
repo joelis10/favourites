@@ -33,7 +33,7 @@ window.addEventListener('click', function(event){
         modal.style.display = "none"
     }
     
-    let randomImage = Math.floor(Math.random() * images.length);
-    background.style.background = images[randomImage].image + 'no-repeat center center/ cover';
+    //let randomImage = Math.floor(Math.random() * images.length);
+    //background.style.background = images[randomImage].image + 'no-repeat center center/ cover';
 
 })
