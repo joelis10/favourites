@@ -47,6 +47,6 @@ btn.addEventListener('click', function(){
     quote.innerText = quotes[random].quote
     person.innerText = quotes[random].person
 
-    let randomImage = Math.floor(Math.random() * images.length);
-    background.style.background = images[randomImage].image + 'no-repeat center center/ cover';
+    //let randomImage = Math.floor(Math.random() * images.length);
+    //background.style.background = images[randomImage].image + 'no-repeat center center/ cover';
 });
