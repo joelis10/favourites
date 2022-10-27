@@ -8,16 +8,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
     <title>Joel's Web Projects</title>
 </head>
 <body>
-    <h1>My Projects</h1>
-    <button class="project" onclick="window.open('/favourites/favouritesproject')">Favourites</button>
-    <button class="project" onclick="window.open('/favourites/quotegenerator')">Quote Generator</button>
-    <button class="project" onclick="window.open('/favourites/modalproject')">Animated Modal</button>
-    <button class="project" onclick="window.open('/favourites/hidedivproject')">Div Customisation</button>
-    <button class="toggleAnim"><span class="off">Turn Animation Off</span><span class="on">Turn Animation On</span></button>
-</body>
-</html> 
+    <h1 class="title">My Projects</h1>
+    <div class="projects">
+        <button class="project" onclick="window.open('/favourites/favouritesproject')">Favourites</button>
+        <button class="project" onclick="window.open('/favourites/quotegenerator')">Quote Generator</button>
+        <button class="project" onclick="window.open('/favourites/modalproject')">Animated Modal</button>
+        <button class="project" onclick="window.open('/favourites/hidedivproject')">Div Customisation</button>
+    </div>
+    
+    <button class="open-modal"><i class="fa-solid fa-universal-access fa-2xl"></i></button>  
+
+    <div class="access-modal">
+        <div class="close">&times;</div>
+        <button class="toggle Anim">Turn animations</button>
+        <button class="toggle Shadow">Turn shadows</button>
+        <button class="toggle simpleText toggled">Turn Simple Text</button>
+        <button class="toggleAll toggled">Turn all features</button>  
+    </div>
+</body> 
+</html>  
+
+<script src="script.js"></script>

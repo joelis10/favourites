@@ -3,16 +3,27 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Fuzzy Bubbles';
+    height: 100%;
+    width: 1000px; 
+    margin: 0 auto;
 }
 
 .project {
     width: 60%;
     height: 50px;
-    margin: 10px auto;
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
     font-size: 1rem;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 250px; 
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .project:hover {
@@ -22,6 +33,104 @@ body {
     color: white;
     cursor: pointer;
     box-shadow: 10px 10px 10px black;
+}
+
+.noAnim:hover {
+    animation: none;
+}
+
+.noShadow:hover {
+    animation-name: buttonAnimate-noShadow;
+    box-shadow: none;
+}
+
+.toggle, .toggleAll {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: lightgreen;
+    color: black;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.toggleAll {
+    margin-top: 85px; 
+    width: 100%; 
+}
+
+.toggle:hover, .toggleAll:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+.toggle::after, .toggleAll::after {
+    content: " Off";
+}
+
+.toggled {
+    background-color: green;
+    color: white;
+}
+
+.toggled:hover {
+    background-color: darkgreen;
+}
+
+.toggled::after {
+    content: " On";
+}
+
+.simple {
+    font-family: sans-serif;
+}
+
+.access-modal {
+    position: absolute;
+    margin-left: 700px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: white;
+    display: none;
+}
+
+.open-modal {
+    position: absolute; 
+    height: 50px;
+    width: 50px;
+    margin-left: 800px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.open-modal:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer; 
+}
+
+.access-modal p {
+    margin: 5px 0;
+}
+
+.access-modal.show {
+    display: block;
+}
+
+.close {
+    position: relative;
+    float: right;
+    font-size: 24px;  
+}
+
+.close:hover {
+    cursor: pointer;
+    color: darkslategrey;
 }
 
 @keyframes buttonAnimate {
@@ -88,6 +197,69 @@ body {
     }
 }
 
-.on {
-    display: none;
+@keyframes buttonAnimate-noShadow {
+    0% {
+        bottom: 0px;
+        opacity: 0;
+        background-color: white;
+    }
+
+    10% {
+        opacity: 1;
+        background-color: blue;
+    }
+
+    20% {
+        opacity: 1;
+        background-color: purple;
+    }
+
+    30% {
+        opacity: 1;
+        background-color: yellow;
+    }
+
+    40% {
+        opacity: 1;
+        background-color: green;
+    }
+
+    50% {
+        opacity: 1;
+        background-color: red;
+    }
+
+    60% {
+        opacity: 1;
+        background-color: orange;
+    }
+    70% {
+        opacity: 1;
+        background-color: teal;
+    }
+
+    80% {
+        opacity: 1;
+        background-color: lawngreen;
+    }
+
+    90% {
+        opacity: 1;
+        background-color: orchid;
+    }
+
+    100% {
+        opacity: 1;
+        background-color: black;
+    }
+}
+
+@keyframes modal-open {
+    from {
+        height: 10px;
+    }
+
+    to {
+        height: 100px;
+    }
 }
