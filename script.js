@@ -5,8 +5,6 @@ document.querySelector(".Anim").addEventListener("click", function (event) {
     .forEach((item) => item.classList.toggle("noAnim"));
 });
 
-
-
 document.querySelector(".Shadow").addEventListener("click", function (event) {
   event.target.classList.toggle("toggled");
   document
