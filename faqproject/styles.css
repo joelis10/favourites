@@ -1,0 +1,69 @@
+body {
+    background: url(/quotegenerator/bgImages/library2.jpg) no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu';
+    font-weight: 300;
+}
+
+.accordion {
+    width: 65%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.title {
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 0;
+}
+
+.question {
+    padding: 18px 0;
+    font-size: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+    position: relative;
+    transition: .5s;
+}
+
+.question::after {
+    content: '+';
+    position: absolute;
+    right: -5px;
+    transition: .5s;
+}
+
+.answer {
+    padding-top: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.active .answer {
+    height: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+    font-weight: 400;
+}
+
+.active .question {
+    font-size: 18px;
+    transition: .5s;
+}
+
+.active .question::after {
+    content: '-';
+    font-size: 30px;
+    transition: .5s;
+}

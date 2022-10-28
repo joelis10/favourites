@@ -5,17 +5,21 @@ document.querySelector(".Anim").addEventListener("click", function (event) {
     .forEach((item) => item.classList.toggle("noAnim"));
 });
 
+
+
 document.querySelector(".Shadow").addEventListener("click", function (event) {
   event.target.classList.toggle("toggled");
   document
     .querySelectorAll(".project")
     .forEach((item) => item.classList.toggle("noShadow"));
-});  
+});
 
-document.querySelector('.simpleText').addEventListener('click', function(event) {
-  event.target.classList.toggle('toggled')
-  document.querySelector('.title').classList.toggle('simple')
-}) 
+document
+  .querySelector(".simpleText")
+  .addEventListener("click", function (event) {
+    event.target.classList.toggle("toggled");
+    document.querySelector(".title").classList.toggle("simple");
+  });
 
 /*
 document.querySelector('.toggleAll.toggled').addEventListener('click', function(event) {
