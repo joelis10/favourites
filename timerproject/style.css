@@ -1,0 +1,73 @@
+body {
+    height: 100vh;
+    background: url(/modalproject/bgImages/woods3.jpg) no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 60%;
+    height: 250px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 10px 10px 20px;
+}
+
+#timer {
+    width: 100%;
+    font-size: 72px;
+    text-align: center;
+    margin: 0px auto;
+    padding-top: 35px;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+button {
+    margin: 0 10px;
+    border: none;
+    background-color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button i {
+    font-size: 2rem;
+    padding: 10px;
+    color: white;
+    width: 50px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+
+#play {
+    background-color: green;
+}
+
+#play:hover {
+    background-color: darkgreen;
+}
+
+#pause {
+    background-color: orange;
+}
+
+#pause:hover {
+    background-color: darkorange;
+}
+
+#reset {
+    background-color: red;
+}
+
+#reset:hover {
+    background-color: darkred;
+}
