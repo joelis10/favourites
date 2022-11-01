@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Open Dyslexia';
+    src: url(/dyslexiafont.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -53,14 +60,14 @@ body {
     border: none;
     padding: 5px;
     border-radius: 5px;
-    background-color: lightgreen;
-    color: black;
+    background-color: green;
+    color: white;
     cursor: pointer;
     margin-bottom: 5px;
 }
 
 .toggleAll {
-    margin-top: 85px; 
+    margin-top: 60px; 
     width: 100%; 
 }
 
@@ -74,8 +81,8 @@ body {
 }
 
 .toggled {
-    background-color: green;
-    color: white;
+    background-color: lightgreen;
+    color: black;
 }
 
 .toggled:hover {
@@ -88,6 +95,10 @@ body {
 
 .simple {
     font-family: sans-serif;
+}
+
+.dyslexic {
+    font-family: 'Open Dyslexia';
 }
 
 .access-modal {
