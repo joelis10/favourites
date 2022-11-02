@@ -1,5 +1,4 @@
 // when page loads, it checks localStorage for accessiblity options
-
 window.onload = function () {
   const checkAnim = localStorage.getItem("animation");
   const checkShadow = localStorage.getItem("shadow");
