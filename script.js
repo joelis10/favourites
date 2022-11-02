@@ -91,6 +91,9 @@ document.querySelector(".simpleText").addEventListener("click", function (event)
   document.querySelector(".dyslexiaText").classList.add("toggled")
   localStorage.setItem("dyslexic", "false")
 
+  document.querySelector(".title").classList.remove("dyslexic");
+    document.querySelectorAll(".project").forEach((item) => item.classList.remove("dyslexic"));
+
   document.querySelector(".title").classList.toggle("simple");
 
   if (event.target.classList.contains("toggled")) {
@@ -105,9 +108,10 @@ document.querySelector(".dyslexiaText").addEventListener("click", function (even
     document.querySelector(".simpleText").classList.add("toggled")
     localStorage.setItem("simpleText", "false")
 
+    document.querySelector(".title").classList.remove("simple");
+
     document.querySelector(".title").classList.toggle("dyslexic");
     document.querySelectorAll(".project").forEach((item) => item.classList.toggle("dyslexic"));
-    document.querySelector("#disqus_thread").classList.toggle("dyslexic")
 
     if (event.target.classList.contains("toggled")) {
       localStorage.setItem("dyslexic", "false");
