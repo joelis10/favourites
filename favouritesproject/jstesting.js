@@ -6,6 +6,7 @@ window.onload = function () {
   let bodyColor = localStorage.getItem("bodyColor")
   let titleColorStore = localStorage.getItem("titleColor")
   let shadow = localStorage.getItem("shadow")
+  let dyslexic = localStorage.getItem("dyslexic")
 
   let container = document.querySelector(".container");
   let title = document.querySelector(".title")
@@ -39,6 +40,12 @@ window.onload = function () {
     addShadow.classList.remove("buttonOn")
     container.classList.remove("shadow");
     localStorage.setItem("shadow", "off")
+  }
+
+  if(dyslexic == "true") {
+    document.querySelector(".body").classList.add("dyslexic")
+  } else {
+    document.querySelector(".body").classList.remove("dyslexic")
   }
 
   document.querySelectorAll(".newType").forEach(
