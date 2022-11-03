@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Customisable Timer</title>
+</head>
+<body>
+    <mojo-countdown 
+    date="2023-10-31" 
+    fields="wdhms" 
+    weeks="Weeks" 
+    days="Days" 
+    hours="Hours"  
+    minutes="Minutes"
+    seconds="Seconds"
+    title="This is an example title"
+></mojo-countdown>
+<br>
+<div class="customise">
+    <button class="button endDateChange">Change End Date</button>
+    <button class="button titleChange">Change Title</button>
+    <button class="button titleColor">Change Title Color</button>
+    <button class="button timeColor">Change Time Color</button>
+    <button class="button textColor">Change Text Color</button>
+    <button class="button italicise">Italicise Text</button> 
+</div>
+<br> 
+<div class="inputs">
+    <input type="date" class="input endDate">
+    <button class="input save">Save</button>
+</div>
+</body>
+</html>
+
+<script>
+    let endDateInput = document.querySelector(".endDate")    
+    let endDateChange = document.querySelector(".endDateChange")
+    let mojoCountdown = document.querySelector("mojo-countdown")
+    
+    window.onload = function() {
+        endDateInput.value = mojoCountdown.getAttribute("date")
+    }
+
+    document.querySelector(".save").addEventListener("click", function() {
+        endDateInput.classList.remove("show")
+        document.querySelector(".save").classList.remove("show")
+        
+        mojoCountdown.setAttribute("date", endDateInput.value)
+        endDateInput.value = mojoCountdown.getAttribute("date")
+    })
+
+    endDateChange.addEventListener("click", function() {
+        document.querySelector(".endDate").classList.add("show")
+        document.querySelector(".save").classList.add("show")  
+    })
+
+    document.querySelector(".titleChange").addEventListener("click", function() {
+
+    })
+    document.querySelector(".titleColor").addEventListener("click", function() {
+        user = prompt("Enter a new colour:")
+        
+        if(user != null) {
+            document.querySelector("header").style.color = user
+        }
+    })
+    document.querySelector(".timeColor").addEventListener("click", function() {})
+    document.querySelector(".textColor").addEventListener("click", function() {})
+    document.querySelector(".italicise").addEventListener("click", function() {})
+</script>
+
+<script src="mojo-countdown.js"></script>

@@ -1,0 +1,20 @@
+body {
+    font-family: sans-serif;
+}
+
+.customise {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inputs {
+    text-align: center;
+}
+
+.input {
+    display: none;
+}
+
+.show {
+    display: inline;
+}
