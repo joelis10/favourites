@@ -22,15 +22,13 @@ body {
 
 .container {
     width: 450px;
-    height: 328px;
-    border: 2px solid #BCFD4C;
+    border: 2px solid #c1ff55;
     border-radius: 15px;
     color: #BCFD4C;
     text-align: center;
 }
 
 .container:last-of-type {
-    height: 370px;
     border: 2px solid #9DAAF2;
     color: #9DAAF2;
     background-color: #1A2238;
@@ -86,7 +84,7 @@ a {
 }
 
 .newType {
-    margin-top: 3px;
+    margin: 10px 0;
     background-color:  white;
     border: none;
     border-radius: 2px;

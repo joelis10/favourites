@@ -1,51 +1,51 @@
 window.onload = function () {
   let containerHTML = localStorage.getItem("currentContainer");
   let containerHeight = localStorage.getItem("containerHeight");
-  let containerColor = localStorage.getItem("containerColor")
-  let borderColor = localStorage.getItem("borderColor")
-  let bodyColor = localStorage.getItem("bodyColor")
-  let titleColorStore = localStorage.getItem("titleColor")
-  let shadow = localStorage.getItem("shadow")
-  let dyslexic = localStorage.getItem("dyslexic")
+  let containerColor = localStorage.getItem("containerColor");
+  let borderColor = localStorage.getItem("borderColor");
+  let bodyColor = localStorage.getItem("bodyColor");
+  let titleColorStore = localStorage.getItem("titleColor");
+  let shadow = localStorage.getItem("shadow");
+  let dyslexic = localStorage.getItem("dyslexic");
 
   let container = document.querySelector(".container");
-  let title = document.querySelector(".title")
-  let addShadow = document.querySelector(".addShadow")
+  let title = document.querySelector(".title");
+  let addShadow = document.querySelector(".addShadow");
 
   if (containerHTML != null) {
     container.innerHTML = containerHTML;
     container.style.height = containerHeight;
   }
 
-  if(containerColor != null) {
-    container.style.backgroundColor = containerColor
+  if (containerColor != null) {
+    container.style.backgroundColor = containerColor;
   }
 
-  if(borderColor != null) {
-    container.style.borderColor = borderColor
+  if (borderColor != null) {
+    container.style.borderColor = borderColor;
   }
 
-  if(bodyColor != null) {
-    document.querySelector("body").style.backgroundColor = bodyColor
+  if (bodyColor != null) {
+    document.querySelector("body").style.backgroundColor = bodyColor;
   }
 
-  if(titleColorStore != null) {
-    title.style.color = titleColorStore
+  if (titleColorStore != null) {
+    title.style.color = titleColorStore;
   }
 
-  if(shadow == "on") {
-    addShadow.classList.add("buttonOn")
+  if (shadow == "on") {
+    addShadow.classList.add("buttonOn");
     container.classList.add("shadow");
   } else {
-    addShadow.classList.remove("buttonOn")
+    addShadow.classList.remove("buttonOn");
     container.classList.remove("shadow");
-    localStorage.setItem("shadow", "off")
+    localStorage.setItem("shadow", "off");
   }
 
-  if(dyslexic == "true") {
-    document.querySelector(".body").classList.add("dyslexic")
+  if (dyslexic == "true") {
+    document.querySelector(".body").classList.add("dyslexic");
   } else {
-    document.querySelector(".body").classList.remove("dyslexic")
+    document.querySelector(".body").classList.remove("dyslexic");
   }
 
   document.querySelectorAll(".newType").forEach(
@@ -84,7 +84,7 @@ window.onload = function () {
     .querySelectorAll(".remove")
     .forEach((item) => item.addEventListener("click", removeSelected));
 
-  document.querySelector("body").addEventListener("click", changeTitle);
+  document.body.addEventListener("click", changeTitle);
 };
 
 function addNew(event) {
@@ -93,14 +93,14 @@ function addNew(event) {
   var li = document.createElement("li");
   var remove = document.createElement("button");
   var wiki = document.createElement("button");
-  var height = container.offsetHeight;
-  var newHeight = height + 35;
+  //var height = container.offsetHeight;
+  //var newHeight = height + 35;
 
   userInput = prompt(
     "Enter a new franchise or sport:\nMake sure to use correct spelling in order to link to the Wikipedia page."
   );
 
-  container.style.height = newHeight + "px";
+  //container.style.height = newHeight + "px";
   ul.appendChild(li);
   li.innerText = userInput;
 
@@ -122,7 +122,7 @@ function addNew(event) {
     .forEach((item) => item.addEventListener("click", removeSelected));
 
   localStorage.setItem("currentContainer", container.innerHTML);
-  localStorage.setItem("containerHeight", container.style.height);
+  //localStorage.setItem("containerHeight", container.style.height);
 }
 
 function changeContainer(event) {
@@ -132,8 +132,7 @@ function changeContainer(event) {
   const container = document.querySelector(".container");
   container.style.backgroundColor = userInput;
 
-  localStorage.setItem("containerColor", container.style.backgroundColor)
-  
+  localStorage.setItem("containerColor", container.style.backgroundColor);
 }
 
 function changeBorder(event) {
@@ -143,7 +142,7 @@ function changeBorder(event) {
   const container = document.querySelector(".container");
   container.style.border = "2px solid " + userInput;
 
-  localStorage.setItem("borderColor", container.style.borderColor)
+  localStorage.setItem("borderColor", container.style.borderColor);
 }
 
 function changeBody(event) {
@@ -153,14 +152,19 @@ function changeBody(event) {
 
   event.target.parentElement.closest(".body").style.background = userInput;
 
-  localStorage.setItem("bodyColor", event.target.parentElement.closest(".body").style.background)
+  localStorage.setItem(
+    "bodyColor",
+    event.target.parentElement.closest(".body").style.background
+  );
 }
 
 function changeButton(event) {
   userInput = prompt(
     "Enter a new colour:\nExamples: #eee - lightblue - rgb(255, 255, 255)"
   );
-  document.querySelectorAll(".franchise").forEach(item => item.style.backgroundColor = userInput);
+  document
+    .querySelectorAll(".franchise")
+    .forEach((item) => (item.style.backgroundColor = userInput));
 }
 
 function changeButtonBorder(event) {
@@ -178,11 +182,11 @@ function titleColor(event) {
   userInput = prompt(
     "Enter a new colour:\nExamples: #eee - lightblue - rgb(255, 255, 255)"
   );
-  let title = document.querySelector(".title")
+  let title = document.querySelector(".title");
 
   title.style.color = userInput;
 
-  localStorage.setItem("titleColorStore", title.style.color)
+  localStorage.setItem("titleColorStore", title.style.color);
 }
 
 function toggleShadow(event) {
@@ -190,11 +194,11 @@ function toggleShadow(event) {
   container.classList.toggle("shadow");
 
   event.target.classList.toggle("buttonOn");
-  
-  if(event.target.classList.contains("buttonOn")) {
-    localStorage.setItem("shadow", "on")
+
+  if (event.target.classList.contains("buttonOn")) {
+    localStorage.setItem("shadow", "on");
   } else {
-    localStorage.setItem("shadow", "off")
+    localStorage.setItem("shadow", "off");
   }
 }
 
@@ -202,12 +206,12 @@ function removeSelected(event) {
   event.target.parentElement.closest("li").style.display = "none";
 
   var container = event.target.closest(".container");
-  var height = container.offsetHeight;
-  var newHeight = height - 35;
-  container.style.height = newHeight + "px";
+  //var height = container.offsetHeight;
+  //var newHeight = height - 35;
+  //container.style.height = newHeight + "px";
 
   localStorage.setItem("currentContainer", container.innerHTML);
-  localStorage.setItem("containerHeight", container.style.height);
+  //localStorage.setItem("containerHeight", container.style.height);
 }
 
 function changeTitle() {

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>WebComponent Testing</title>
+  </head>
+  <body>
+    <a-component></a-component>
+    <a-component></a-component>
+    <a-component></a-component>
+    <a-component></a-component>
+    <a-component></a-component>
+    <a-component></a-component>
+    <hr />
+    <template id="book-template">
+      <li><span class="title"></span> &mdash; <span class="author"></span></li>
+    </template>
+
+    <template id="book-template-2">
+      <li>
+        <span class="author"></span>'s classic novel <span class="title"></span>
+      </li>
+    </template>
+
+    <template id="movie-template">
+      <li>
+        <span class="name"></span> was directed by
+        <span class="director"></span>
+      </li>
+    </template>
+
+    <template id="movie-template-2">
+      <li>
+        <span class="director"></span> directed <span class="name"></span>
+      </li>
+    </template>
+
+    <ul id="books"></ul>
+
+    <ul id="movies"></ul>
+
+    <fieldset id="templates">
+      <legend>Choose template</legend>
+
+      <label>
+        <input type="radio" name="template" value="book-template" checked />
+        Template One
+      </label>
+      <label>
+        <input type="radio" name="template" value="book-template-2" /> Template
+        Two
+      </label>
+    </fieldset>
+
+    <fieldset id="templates-movies">
+      <legend>Choose template</legend>
+
+      <label>
+        <input type="radio" name="templateTwo" value="movie-template" checked />
+        Template One
+      </label>
+      <label>
+        <input type="radio" name="templateTwo" value="movie-template-2" />
+        Template Two
+      </label>
+    </fieldset>
+    <hr />
+
+    <br />
+    <br />
+    <hr />
+    <new-component id="new-component" name="John Doe">
+      
+    </new-component>
+  </body>
+</html>
+
+<script src="a-component.js"></script>
+<script src="script.js"></script>
