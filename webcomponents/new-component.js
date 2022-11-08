@@ -42,10 +42,10 @@ template.innerHTML = `
 <div class="user-card">
   <img />
   <div class="container">
-    <h3></h3>
+    <h3>Name</h3>
     <div class="info">
-      <p id="email"></p>
-      <p id="phone"></p> 
+      <p id="email">Email</p>
+      <p id="phone">Phone</p> 
     </div>
     <button id="toggle-info">Hide Info</button>
   </div>
@@ -60,10 +60,30 @@ class newComponent extends HTMLElement {
 
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    this.shadowRoot.querySelector("h3").innerText = this.getAttribute("name");
-    this.shadowRoot.querySelector("img").src = this.getAttribute("avatar")
-    this.shadowRoot.querySelector("#email").innerText = this.getAttribute("email")
-    this.shadowRoot.querySelector("#phone").innerText = this.getAttribute("phone")
+
+    if(this.getAttribute("name") == null) {
+      this.setAttribute("name", "Name")
+    } else {
+      this.shadowRoot.querySelector("h3").innerText = this.getAttribute("name");
+    }
+
+    if(this.getAttribute("avatar") == null) {
+      this.shadowRoot.querySelector("img").src = "https://img.icons8.com/officel/512/circled-user-male-skin-type-6.png"
+    } else {
+      this.shadowRoot.querySelector("img").src = this.getAttribute("avatar")
+    }
+
+    if(this.getAttribute("email") == null) {
+      this.setAttribute("email", "Email")
+    } else {
+      this.shadowRoot.querySelector("#email").innerText = this.getAttribute("email")
+    }
+
+    if(this.getAttribute("phone") == null) {
+      this.setAttribute("phone", "Phone")
+    } else {
+      this.shadowRoot.querySelector("#phone").innerText = this.getAttribute("phone")
+    }
   }
 
   toggleInfo() {
@@ -99,3 +119,9 @@ class newComponent extends HTMLElement {
 }
 
 window.customElements.define("new-component", newComponent);
+
+document.querySelector(".addNew").addEventListener("click", function() {
+  document.body.append(template)
+
+  
+})

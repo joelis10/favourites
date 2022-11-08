@@ -43,7 +43,7 @@
   padding: 1rem;
   position: fixed;
 }
-button {
+/* button {
   all: unset;
   cursor: pointer;
   font-size: 1.25rem;
@@ -53,8 +53,20 @@ button {
 }
 button:focus {
   border: 2px solid blue;
+} */
+
+.addNew {
+  border: 2px solid darkorchid;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: transparent;
+  font-weight: bold;
+  transition: .2s;  
 }
 
-h3 { 
-  color: purple;
+.addNew:hover {
+  color: white;
+  background-color: darkorchid;
+  cursor: pointer;
+  transition: .2s;  
 }
