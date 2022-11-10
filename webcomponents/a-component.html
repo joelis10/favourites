@@ -10,6 +10,45 @@
 </head>
 
 <body>
+
+    <style>
+
+        new-component {
+            border-radius: 10px;
+            margin-bottom: 10px;
+            width: 60%;
+            background-color: #f7f7f7;
+            border-bottom: darkorchid 2px solid; 
+            font-family: sans-serif;
+            transition: .5s;
+            height: 10rem;
+        }
+
+        new-component::part(button) {
+            cursor: pointer;
+            background: darkorchid;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+
+        new-component::part(img) {
+            width: 10rem; 
+            transition: .5s;
+            border-radius: 10px 0 0 10px;
+        }
+
+        new-component::part(name) {
+            color: darkblue;
+        }
+
+        new-component::part(img).hidden {
+            width: 100px;
+        }
+
+    </style>
 <!--     <a-component></a-component>-->    
     <new-component 
     name="John Doe" 
@@ -23,7 +62,6 @@
     email="janedoe@email.com"
     phone="555-123-456"
     ></new-component>
-    <new-component></new-component>
     <button class="addNew">Add new profile</button>
 </body>
 

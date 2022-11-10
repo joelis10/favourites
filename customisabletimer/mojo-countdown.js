@@ -10,73 +10,29 @@
 
 const DEFAULT_FIELDS = 'wdhms';
 
-const editTemplate = `<style>
-.mojo-counter-edit {
-    border: 2px solid #077aa7;
-    display: block;
-}
-.mojo-counter-edit header {
-    background: #077aa7; 
-    color: #fff;
-    font-family: monospace; 
-    margin: 0 0 5px;
-    padding: 5px;
-}       
-</style>
-<div class="mojo-counter-edit">
-    <header>
-        &lt;mojo-countdown
-        <div>&nbsp;&nbsp;title=<span id="edit-title"></span></div>
-        <div>&nbsp;&nbsp;date=<span id="edit-date"></span></div>
-        <div>&nbsp;&nbsp;fields=<span id="edit-fields"></span></div>
-        &gt;[Shown after countdown ends]&lt;/mojo-countdown&gt;
-        <div><small><b>w</b>=Weeks, <b>d</b>=Days, <b>h</b>=Hour, <b>m</b>=Minutes, <b>s</b>=Seconds</small></div>
-    </header>
-    <div class="mojo-counter-after">
-        <slot></slot>
-    </div>
-    
-</div>`;
-
-const countdownTemplate = `<style>
-mojo-countdown time {
-    display: flex;
-    justify-content: space-around;
-}
-.mojo-countdown-field {
-    text-align: center;
-}
-.mojo-countdown-value {
-    display: block;
-    font-weight: bold;
-}
-/*
-.mojo-countdown-label {
-    font-size: 80%;
-}
-*/
-</style>
-<header id="mojo-countdown-title"></header>
-<time class="mojo-countdown">
-    <span class="mojo-countdown-field" id="mojo-countdown-weeks" style="display: none">
-        <span class="mojo-countdown-value"></span>
-        <span class="mojo-countdown-label"></span>
+const countdownTemplate = document.createElement("template")
+countdownTemplate.innerHTML = `
+<header part="title" id="mojo-countdown-title"></header>
+<time part="time" class="mojo-countdown">
+    <span part="field" class="mojo-countdown-field" id="mojo-countdown-weeks" style="display: none">
+        <span part="value" class="mojo-countdown-value"></span>
+        <span part="label" class="mojo-countdown-label"></span>
     </span>
-    <span class="mojo-countdown-field" id="mojo-countdown-days" style="display: none">
-        <span class="mojo-countdown-value"></span>
-        <span class="mojo-countdown-label"></span>
+    <span part="field" class="mojo-countdown-field" id="mojo-countdown-days" style="display: none">
+        <span part="value" class="mojo-countdown-value"></span>
+        <span part="label" class="mojo-countdown-label"></span>
     </span>
-    <span class="mojo-countdown-field" id="mojo-countdown-hours" style="display: none">
-        <span class="mojo-countdown-value"></span>
-        <span class="mojo-countdown-label"></span>
+    <span part="field" class="mojo-countdown-field" id="mojo-countdown-hours" style="display: none">
+        <span part="value" class="mojo-countdown-value"></span>
+        <span part="label" class="mojo-countdown-label"></span>
     </span>
-    <span class="mojo-countdown-field" id="mojo-countdown-minutes" style="display: none">
-        <span class="mojo-countdown-value"></span>
-        <span class="mojo-countdown-label"></span>
+    <span part="field" class="mojo-countdown-field" id="mojo-countdown-minutes" style="display: none">
+        <span part="value" class="mojo-countdown-value"></span>
+        <span part="label" class="mojo-countdown-label"></span>
     </span>
-    <span class="mojo-countdown-field" id="mojo-countdown-seconds" style="display: none">
-        <span class="mojo-countdown-value"></span>
-        <span class="mojo-countdown-label"></span>
+    <span part="field" class="mojo-countdown-field" id="mojo-countdown-seconds" style="display: none">
+        <span part="value" class="mojo-countdown-value"></span>
+        <span part="label" class="mojo-countdown-label"></span>
     </span>
 </time>`;
 
@@ -112,14 +68,6 @@ class MojoCountdown extends HTMLElement {
         }
     }
 
-    buildField(value, label) {
-        return `<span class="mojo-countdown-field">
-            <span class="mojo-countdown-value">${value}</span>
-            <span class="mojo-countdown-label">${label}</span>
-</span>`;
-    }
-
-
     setupElement() {
         this._timeInterval;
         this._after = this.innerHTML;  // Stash content to be displayed after the countdown expires
@@ -150,28 +98,19 @@ class MojoCountdown extends HTMLElement {
         </div>`;
     }
 
-    renderEditMode() {
-        console.log("<mojo-counter>EDIT MODE");
-        let shadow = this.attachShadow({ mode: 'open' });
-        
-        shadow.innerHTML = editTemplate;
-        shadow.getElementById('edit-title').textContent = this.title;
-        shadow.getElementById('edit-date').textContent = this.date;
-        shadow.getElementById('edit-fields').textContent = this._fields;
-
-    }
-
     renderTemplate() {
-        this.innerHTML = countdownTemplate;
+        
+        this.attachShadow({ mode: "open" });
+        this.shadowRoot.appendChild(countdownTemplate.content.cloneNode(true))
 
-        const elWeeks = this.querySelector('#mojo-countdown-weeks');
-        const elDays = this.querySelector('#mojo-countdown-days');
-        const elHours = this.querySelector('#mojo-countdown-hours');
-        const elMinutes = this.querySelector('#mojo-countdown-minutes');
-        const elSeconds = this.querySelector('#mojo-countdown-seconds');
+        const elWeeks = this.shadowRoot.querySelector('#mojo-countdown-weeks');
+        const elDays = this.shadowRoot.querySelector('#mojo-countdown-days');
+        const elHours = this.shadowRoot.querySelector('#mojo-countdown-hours');
+        const elMinutes = this.shadowRoot.querySelector('#mojo-countdown-minutes');
+        const elSeconds = this.shadowRoot.querySelector('#mojo-countdown-seconds');
 
         if (this.title) {
-            this.querySelector('#mojo-countdown-title').textContent = this.title;
+            this.shadowRoot.querySelector('#mojo-countdown-title').textContent = this.title;
         }
         if (this._showWeeks) {
             elWeeks.querySelector('.mojo-countdown-label').textContent = this.weeks ? this.weeks : LABEL_WEEKS;
@@ -209,11 +148,11 @@ class MojoCountdown extends HTMLElement {
         
         let remainder = diffTime > 0 ? diffTime : 0;
 
-        const elWeeks = this.querySelector('#mojo-countdown-weeks');
-        const elDays = this.querySelector('#mojo-countdown-days');
-        const elHours = this.querySelector('#mojo-countdown-hours');
-        const elMinutes = this.querySelector('#mojo-countdown-minutes');
-        const elSeconds = this.querySelector('#mojo-countdown-seconds');
+        const elWeeks = this.shadowRoot.querySelector('#mojo-countdown-weeks');
+        const elDays = this.shadowRoot.querySelector('#mojo-countdown-days');
+        const elHours = this.shadowRoot.querySelector('#mojo-countdown-hours');
+        const elMinutes = this.shadowRoot.querySelector('#mojo-countdown-minutes');
+        const elSeconds = this.shadowRoot.querySelector('#mojo-countdown-seconds');
 
         if (this._showWeeks) {
             elWeeks.querySelector('.mojo-countdown-value').textContent = Math.floor(remainder / WEEK);
@@ -246,7 +185,7 @@ class MojoCountdown extends HTMLElement {
 
             // If there's _after content, replace the template with that
             if (this._after) {
-                this.innerHTML = this._after;
+                this.shadowRoot.innerHTML = this._after;
             }
             return;
         }
@@ -254,12 +193,6 @@ class MojoCountdown extends HTMLElement {
 
     
     connectedCallback() {
-        // Don't load data if this is in an editable area.
-        if (this.closest('[contenteditable]')) {
-            this.renderEditMode();
-        } else {
-            // https://stackoverflow.com/questions/61971919/wait-for-element-upgrade-in-connectedcallback-firefox-and-chromium-differences
-            // Contents are not loaded yet, so delay the setup until it is.
             setTimeout(() => {
                 this.setupElement();
                 this.setupFields();
@@ -270,7 +203,6 @@ class MojoCountdown extends HTMLElement {
             this._timeInterval = setInterval(() => {
                 this.updateClock();
             }, 1000);
-        }
     }
 }
 
