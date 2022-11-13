@@ -1,0 +1,187 @@
+#header-img {
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+}
+
+body {
+  background-color: #e3e3e3ff;
+  font-family: "Ubuntu", sans-serif;
+}
+
+#header {
+  height: 50px;
+  background-color: #6fd1b0;
+  padding: 5px;
+  position: fixed;
+  top: 1%;
+  left: 1%;
+  right: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+#heading {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#nav-bar ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#nav-bar li {
+  margin: 0 5px;
+  display: block;
+  color: black;
+}
+
+.nav-link:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#photos {
+  margin-top: 90px;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#photos img {
+  border-radius: 10px;
+  height: 300px;
+  object-fit: cover;
+}
+
+#features{
+  width: 100%;
+  margin-top: 20px;
+}
+
+#features h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.feature {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+}
+
+
+.feature p {
+  margin-left: 15px;
+  font-weight: 300;
+}
+
+.sub {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.feature img {
+  border-radius: 10px;
+  height: 300px;
+  object-fit: cover;
+}
+
+#features a {
+  color: #32991dff;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header a {
+  color: black;
+}
+
+.video {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  padding: 30px 0;
+  text-align: center;
+  background-color: #c2c2c2ff;
+}
+
+.purchase {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.waitlist {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+@media (max-width:1199px) {
+  .feature img {
+    min-width: 300px;
+    width: 300px;
+  }
+
+  .feature {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .feature p {
+    margin: 10px 0;
+  }
+
+  #photos img {
+    width: 300px;
+    height: 200px;
+  }
+
+}
+
+@media (min-width:1200px) {
+  .feature img {
+    min-width: 500px;
+    max-width: 500px;
+  }
+
+  .feature {
+    margin: 0 10%;
+  }
+
+  #photos img {
+    width: 400px;
+    height: 300px;
+  }
+
+}
+
+@media (max-width: 769px) {
+  #photos img {
+    width: 200px;
+    height: 150px;
+  }
+
+  #heading {
+    font-size: 20px;
+  }
+
+}

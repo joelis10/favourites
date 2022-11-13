@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Android Device Survey</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1 id="title" class="heading">Android Device Survey</h1>
+    <p class="heading" id="description"><strong>Tell us about the Android device you use daily.</strong></p>
+    <form id="survey-form">
+      <fieldset>
+        <label id="name-label" for="name">Enter your name: <input class="inline" type="text" id="name" name="name" placeholder="John Doe" required></label>
+        <label id="email-label" for="email">Enter your email address: <input class="inline" type="email" id="email" name="email" placeholder="johndoe@email.com" required></label>
+      </fieldset>
+      <fieldset>
+        <label id="number-label" for="number">What year was your device made in? <input class="inline" type="number" id="number" name="number" min="2007" max="2022" placeholder="YYYY"></label>
+        <label for="dropdown">Choose a manufacturer:
+        <select id="dropdown" name="dropdown">
+          <option value="">Choose an OEM...</option>
+          <option value="1">Google</option>
+          <option value="2">Samsung</option>
+          <option value="3">Huawei</option>
+          <option value="4">Xiaomi</option>
+          <option value="5">Apple</option>
+          <option value="6">OnePlus</option>
+          <option value="7">Oppo</option>
+          <option value="8">Nothing</option>
+          <option value="9">Other...</option>
+          </select>
+          </label>
+          <p class="sub">How long have you had the phone?</p>
+          <label for="radio"><input type="radio" name="radio" id="radio" value="1">less than 1 year</label>
+          <label for="radio"><input type="radio" name="radio" id="radio" value="2">1 - 2 years</label>
+          <label for="radio"><input type="radio" name="radio" id="radio" value="3">2 - 3 years</label>
+          <label for="radio"><input type="radio" name="radio" id="radio" value="4">3 - 5 years</label>
+          <label for="radio"><input type="radio" name="radio" id="radio" value="5">5+ years</label>
+          <p class="sub">What do you <em>like</em> about the phone?</p>
+          <label><input type="checkbox" name="like" value="1">Comfortable to hold</label>
+          <label><input type="checkbox" name="like" value="2">Good sized screen</label>
+          <label><input type="checkbox" name="like" value="3">Has the ports I need</label>
+          <label><input type="checkbox" name="like" value="4">Battery lasts long enough</label>
+          <label><input type="checkbox" name="like" value="5">Battery charges quick enough</label>
+          <label><input type="checkbox" name="like" value="6">It has all the features I need (and maybe more)</label>
+          <p class="sub">What do you <em>dislike</em> about the phone?</p>
+          <label><input type="checkbox" name="dislike" value="1">Can be uncomfortable to hold</label>
+          <label><input type="checkbox" name="dislike" value="2">Screen is too big/small</label>
+          <label><input type="checkbox" name="dislike" value="3">I find myself needing dongles more often due to a lack of ports</label>
+          <label><input type="checkbox" name="dislike" value="4">Battery could last longer</label>
+          <label><input type="checkbox" name="dislike" value="5">Battery doesn't charge very quick</label>
+          <label><input type="checkbox" name="dislike" value="6">It doesn't have many useful features outside of calling, texting and downloading apps</label>
+          <p class="sub">What else can you tell us about your phone?</p>
+          <label for="textarea"><em></em>
+          <textarea id="textarea" placeholder="Include the model, other advantages, disadvantages, etc." rows="5"></textarea>
+          </label>
+      </fieldset>
+    <button type="submit" id="submit">Submit</button>
+    </form>
+  </body>
+</html>

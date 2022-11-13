@@ -41,6 +41,7 @@ body {
     color: white;
     cursor: pointer;
     box-shadow: 10px 10px 10px black;
+    z-index: 1;
 }
 
 .noAnim:hover {
@@ -164,6 +165,70 @@ body {
 .show-comments {
     margin: 10px 0;
 }
+
+.open-fcc {
+    width: 80%;
+    padding: 5px 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+} .open-fcc i {
+    float: right;
+    margin-right: 10px; 
+    position: relative;
+} .open-fcc:hover {
+    background-color: black;
+    cursor: pointer;
+    color: white;
+} 
+
+i {
+    transform: rotate(0deg);
+    transition: transform 0.2s linear;
+} i.open {
+    transform: rotate(180deg);
+    transition: transform 0.2s linear;
+}
+
+.fcc-projects {
+    display: none;
+} .fcc-projects.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 0;
+    width: 200px;
+} .fcc-project {
+    width: 80%;
+    margin: 2px 0;
+    border: none;
+    background-color: transparent;
+    padding: 5px 0;
+    transition: .5s ease;
+    border-radius: 5px;
+} .fcc-project:hover {
+    animation-name: fcc-project-hover;
+    animation-duration: .5s ease;
+    cursor: pointer;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+@keyframes fcc-project-hover {
+    from {
+        width: 80%;
+        background-color: transparent;
+        color: black;
+    }
+
+    to {
+        width: 100%;
+        background-color: black;
+        color: white;
+    }
+}
+
 
 @keyframes buttonAnimate {
     0% {

@@ -134,3 +134,10 @@ document.querySelector(".show-comments").addEventListener("click", function(even
   document.querySelector("#disqus_thread").classList.toggle("show")
   event.target.classList.toggle("toggled")
 })
+
+//fcc projects event listener 
+
+document.querySelector(".open-fcc").addEventListener("click", function(event) {
+  document.querySelector(".caret-open").classList.toggle("open")
+  document.querySelector(".fcc-projects").classList.toggle("open")
+})
