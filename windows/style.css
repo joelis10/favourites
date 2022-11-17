@@ -1,0 +1,63 @@
+body {
+    margin: 0; 
+    font-family: arial;
+    overflow: hidden;
+}
+
+.taskbar {
+    background-color: lightblue;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+} 
+
+.start {
+    height: 100%;
+    width: 50px;
+    background-color: lightskyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} .start i {
+    color: white;
+    transition: .5s ease;
+} .start i:hover {
+    color: aquamarine;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.start-menu {
+    width: 500px;
+    height: 1000px;
+    background-color: aliceblue;
+    position: absolute; 
+    bottom: -1000px;
+    z-index: -1;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} .start-menu.show {
+    bottom: 0;
+    transition: .5s;
+}
+
+.app {
+    height: 50px;
+    background-color: aquamarine;
+    width: 90%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+} .app.show {
+    transition: .8s;
+}
+
+.context-menu {
+    display: none;
+} .context-menu.show {
+    display: block;
+}
