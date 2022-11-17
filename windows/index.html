@@ -14,8 +14,11 @@
 
 <body>
     <div class="taskbar">
-        <div class="start">
-            <i id="start" class="fa-brands fa-windows fa-2xl"></i>
+        <div class="task start"> 
+            <i id="start" class="fa-brands fa-windows fa-lg"></i>
+        </div>
+        <div class="task notes">
+            <i class="fa-solid fa-pen-to-square fa-lg"></i>
         </div>
     </div>
     <div class="start-menu">
@@ -28,8 +31,10 @@
     </div>
 
     <div class="context-menu">
-        <div class="menu-item">Change background</div>
+        <label for="file"><div class="bg menu-item">Change background</div></label>
     </div>
+
+    <input type="file" name="file" id="file">
 </body>
 
 </html>

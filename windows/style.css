@@ -1,37 +1,49 @@
 body {
+    width: 100vw;
+    height: 100vh;
     margin: 0; 
     font-family: arial;
     overflow: hidden;
+    background: url(bg.png) no-repeat center center/cover;
 }
 
 .taskbar {
-    background-color: lightblue;
+    background-color: rgb(0, 11, 42);
     width: 100%;
     height: 50px;
     position: fixed;
     bottom: 0;
+    display: flex;
+    flex-direction: row;
 } 
 
-.start {
+.start i:hover {
+    background-color: black;
+} .start.show i {
+    color: rgb(24, 219, 240);
+    background-color: black;
+}
+
+.task {
     height: 100%;
-    width: 50px;
-    background-color: lightskyblue;
+    width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-} .start i {
+    padding: 0 10px;
+} .task i { 
     color: white;
-    transition: .5s ease;
-} .start i:hover {
-    color: aquamarine;
+    transition: .2s ease;
+} .task i:hover {
+    color: rgb(24, 219, 240);
     cursor: pointer;
-    transition: .5s ease;
+    transition: .2s ease;
 }
 
 .start-menu {
     width: 500px;
-    height: 1000px;
-    background-color: aliceblue;
+    height: 80%;
+    background-color: rgb(0, 45, 136);
     position: absolute; 
     bottom: -1000px;
     z-index: -1;
@@ -45,19 +57,41 @@ body {
 }
 
 .app {
+    background-color: rgb(15, 171, 248);
     height: 50px;
-    background-color: aquamarine;
     width: 90%;
-    margin-top: 10px;
+    margin-top: 80px;
     display: flex;
     align-items: center;
     padding: 0 10px;
+    transition: .8s;
 } .app.show {
     transition: .8s;
+    margin-top: 10px;
 }
 
 .context-menu {
+    background-color: gainsboro;
+    position: absolute;
+    z-index: 10;
+    transition: .2s;
+    overflow: hidden;
+    border-radius: 5px;
+    font-size: 14px;
     display: none;
-} .context-menu.show {
-    display: block;
+    box-shadow: 5px 5px 5px;
+    margin: 0;
+}
+
+.menu-item {
+    padding: 10px;
+}
+.menu-item:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+#file {
+    display: none;
 }
