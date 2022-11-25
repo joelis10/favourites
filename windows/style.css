@@ -68,6 +68,10 @@ body {
 } .app.show {
     transition: .8s;
     margin-top: 10px;
+} 
+.app:hover {
+    cursor: pointer;
+    color: white;
 }
 
 .context-menu {

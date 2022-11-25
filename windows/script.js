@@ -2,6 +2,13 @@ const menu = document.querySelector(".context-menu")
 
 window.onload = function() {
     document.querySelector(".start-menu").classList.remove("show")
+    const bgCheck = localStorage.getItem("bg")
+
+    if (bgCheck != null) {
+        document.body.style.backgroundImage = "url(" + bgCheck + ")"    
+    } else {
+        document.body.style.backgroundImage = "bg.png"
+    }
 }
 
 document.getElementById("start").addEventListener("click", function(event) {
@@ -32,12 +39,23 @@ function rightClick(e) {
     e.preventDefault()
 }
 
-document.getElementById("file").addEventListener("change", function(event) {
-    reader = new FileReader()
-    reader.onload = handleFileLoad
-}, false)
+document.getElementById("file").addEventListener("change", readURL, true) 
 
-function handleFileLoad(event) {
-    console.log(event);
-    console.log("uploaded")
+function readURL() {
+    var file = document.getElementById("file").files[0]
+    var reader = new FileReader()
+
+    reader.onloadend = function() {
+        document.body.style.backgroundImage = "url(" + reader.result + ")"
+        localStorage.setItem("bg", reader.result)
+    }
+    if (file) {
+        reader.readAsDataURL(file)
+    } else {
+
+    }
+}
+
+function openOne() {
+    document.querySelector("start-menu").classList.remove("show")
 }
