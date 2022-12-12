@@ -4,7 +4,7 @@ body {
     margin: 0; 
     font-family: arial;
     overflow: hidden;
-    background: url(bg.png) no-repeat center center/cover;
+    background: url(https://joelnod.uk/windows/bg.png) no-repeat center center/cover;
 }
 
 .taskbar {
