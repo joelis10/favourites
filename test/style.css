@@ -1,12 +1,13 @@
 * {
     margin: 0;
+    padding: 0;
     font-family: 'Unbounded';
     font-weight: 300;
 }
 
 body {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: none;
 }
 
@@ -18,31 +19,58 @@ header {
     display: flex;
     justify-content: center; 
     align-items: center;
-}
-
-header ul {
+} header ul {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-}
-
-header a {
+} header a {
     text-decoration: none;
     color: black;
 }
 
-.welcome {
+.container {
     height: 100vh;
-    background-color: #e3e3e3ff;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    text-align: center;
+} 
+
+.sm-container {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.welcome h1 {
+.image, .content {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome {
+    background-color: #e3e3e3ff;
+    flex-direction: column; 
+} .welcome h1 {
     font-weight: bold;
+}
+
+.about {
+    background-color: plum;
+    height: 50vh;
+} .about .image {
+    background: url(/test/images/fcc.png) center center/cover;
+}
+
+.projects {
+    background-color: beige;
 }
 
 .checkUser {
@@ -54,4 +82,38 @@ header a {
     background-color: white;
     justify-content: center;
     align-items: center;
+}
+
+.contact {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white; 
+} .contact ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    list-style: none;
+} .contact ul i {
+    margin-right: 5px;
+} .contact ul a {
+    text-decoration: none;
+    color: white;
+}
+
+@media (min-width: 320px) and (max-width:480px) {
+
+    * {
+        font-size: 14px;
+    }
+
+    .sm-container {
+        height: 30vh;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
 }
