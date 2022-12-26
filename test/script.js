@@ -1,5 +1,9 @@
 const pwdField = document.querySelector('input')
 
+window.onload = function() {
+    redirectUser()
+}
+
 document.getElementById('submit').addEventListener('click', function() {
     checkPwd()
 })
