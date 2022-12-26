@@ -19,6 +19,6 @@ function redirectUser() {
     allowed = localStorage.getItem('pwdcorrect')
 
     if (allowed) {
-        window.location.replace('/test/homepage.html')
+        window.location.replace('/test/testlocations.html')
     }
 }
