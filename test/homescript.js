@@ -11,6 +11,6 @@ window.onload = function() {
         window.location.replace('/test')
     } else {
         check.style.display = 'none'
-        document.body.style.display = 'block'
+        document.body.style.display = 'flex'
     }
 }
