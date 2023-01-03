@@ -141,3 +141,22 @@ document.querySelector(".open-fcc").addEventListener("click", function(event) {
   document.querySelector(".caret-open").classList.toggle("open")
   document.querySelector(".fcc-projects").classList.toggle("open")
 })
+
+//testing out notifications
+
+const img = "/quotegenerator/bgImages/library1.jpg";
+const text = "This is a test notification";
+const title = "Test Notification :)";
+const options = {
+    body: text,
+    icon: "/favicon.ico",
+    vibrate: [200, 100, 200],
+    tag: "Test Notification",
+    image: img,
+    badge: "/favicon.ico",
+    actions: [{ action: "Detail", title: "View", icon: icon }]
+ };
+
+navigator.serviceWorker.ready.then(function(serviceWorker) {
+  serviceWorker.showNotification(title, options);
+});
