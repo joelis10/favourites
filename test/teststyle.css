@@ -3,6 +3,10 @@
     background-color: black;
 }
 
+body {
+    flex-direction: column;
+}
+
 h3 {
     color: rgb(255, 84, 84);
     font-size: 16px;
