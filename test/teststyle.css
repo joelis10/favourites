@@ -1,0 +1,22 @@
+* {
+    font-family: 'Unbounded';
+    background-color: black;
+}
+
+h3 {
+    color: rgb(255, 84, 84);
+    font-size: 16px;
+}
+
+li {
+    list-style: none;
+    color: aquamarine;
+}
+
+a {
+    text-decoration: none;
+}
+
+li:hover {
+    color: aqua; 
+}
